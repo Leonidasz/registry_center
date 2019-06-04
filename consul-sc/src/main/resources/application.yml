@@ -1,0 +1,11 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: service-consumer
+  cloud:
+    consul:
+      host: 10.255.242.120
+      port: 8500
+      discovery:
+        register: false

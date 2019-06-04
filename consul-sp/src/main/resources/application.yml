@@ -1,0 +1,43 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: service-provider
+  cloud:
+    consul:
+      host: 10.255.242.120
+      port: 8500
+      discovery:
+        register: true
+        tags: sp
+        serviceName: service-provider
+        healthCheckInterval: 15s
+        healthCheckUrl: http://192.168.88.90:9001/actuator/health
+        prefer-ip-address: true
+
+ddcloud:
+  registry:
+    multipath:
+      enable: true
+      clients: 10.255.242.115,10.255.242.116
+#      - consul:
+#          host: 10.255.242.115
+#          port: 8500
+#          discovery:
+#            register: true
+#            tags: sp
+#            serviceName: service-provider
+#            healthCheckInterval: 15s
+#            healthCheckUrl: http://192.168.88.90:9001/actuator/health
+#            prefer-ip-address: true
+#      - consul:
+#          host: 10.255.242.116
+#          port: 8500
+#          discovery:
+#            register: true
+#            tags: sp
+#            serviceName: service-provider
+#            healthCheckInterval: 15s
+#            healthCheckUrl: http://192.168.88.90:9001/actuator/health
+#            prefer-ip-address: true
+
